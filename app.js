@@ -13,15 +13,15 @@ let playerHp = 5;
 let goblins = [
     {    
         name: 'big ears',
-        hp: 5
+        hp: 5,
     },
     {    
         name: 'small ears',
-        hp: 3
+        hp: 3,
     },
     {    
         name: 'Ginormous ears',
-        hp: 10
+        hp: 10,
     },
 ];
 
@@ -33,6 +33,7 @@ function displayGoblins() {
 
     for (let goblin of goblins) {
         const newGoblinsEl = document.createElement('li');
+        newGoblinsEl.textContent = 'new goblin has 2 hp'
         const nameEl = document.createElement('div');
         const emojiEl = document.createElement('div');
         const hpEl = document.createElement('div');
@@ -45,6 +46,8 @@ function displayGoblins() {
         } else {
             emojiEl.textContent = '🙃';
         }
+
+        goblinsEl.append(newGoblinsEl);
 
         newGoblinsEl.classList.add('newGoblin');
 
