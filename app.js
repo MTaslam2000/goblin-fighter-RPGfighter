@@ -26,6 +26,20 @@ let goblins = [
 ];
 
 /* Events */
+summonButtonEl.addEventListener('click', () => {
+    const newGuyName = goblinInputEl.value;
+    // goblins.push(newGuyName);
+    const newGuy = {
+        name: newGuyName || `New Guy ${Math.floor(Math.random() * 100)}`,
+        hp: 2,
+    };
+    goblins.push(newGuy);
+
+    goblinInputEl.value = '';
+
+    displayGoblins();
+
+});
 
 /* Display Functions */
 function displayGoblins() {
@@ -33,7 +47,6 @@ function displayGoblins() {
 
     for (let goblin of goblins) {
         const newGoblinsEl = document.createElement('li');
-        newGoblinsEl.textContent = 'new goblin has 2 hp'
         const nameEl = document.createElement('div');
         const emojiEl = document.createElement('div');
         const hpEl = document.createElement('div');
@@ -46,12 +59,11 @@ function displayGoblins() {
         } else {
             emojiEl.textContent = '🙃';
         }
-
-        goblinsEl.append(newGoblinsEl);
-
         newGoblinsEl.classList.add('newGoblin');
 
-        newGoblinsEl.append(nameEl, hpEl, emojiEl);
+        goblinsEl.append(newGoblinsEl, nameEl, hpEl, emojiEl);
+
+
     }
 }
 
