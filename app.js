@@ -1,4 +1,5 @@
 /* Imports */
+import { renderGoblin } from "./render-utils.js";
 
 /* Get DOM Elements */
 const goblinsEl = document.getElementById('goblins');
@@ -46,22 +47,9 @@ function displayGoblins() {
     goblinsEl.textContent = '';
 
     for (let goblin of goblins) {
-        const newGoblinsEl = document.createElement('li');
-        const nameEl = document.createElement('div');
-        const emojiEl = document.createElement('div');
-        const hpEl = document.createElement('div');
+        const newGoblinsEl = renderGoblin(goblin);
 
-        nameEl.textContent = goblin.name;
-        hpEl.textContent = goblin.hp;
-
-        if (goblin.hp > 0) {
-            emojiEl.textContent = '🤣';
-        } else {
-            emojiEl.textContent = '🙃';
-        }
-        newGoblinsEl.classList.add('newGoblin');
-
-        goblinsEl.append(newGoblinsEl, nameEl, hpEl, emojiEl);
+        goblinsEl.append(newGoblinsEl);
 
 
     }
