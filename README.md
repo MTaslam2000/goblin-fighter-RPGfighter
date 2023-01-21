@@ -25,3 +25,14 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+![wireframe](./assets/wireframe.png);
+
+##HTML
+
+-   I need a section for total goblins beaten, and set a class and id for it.
+-   I then need an div with a span in it that shows my players HP bar set it equal to 5
+-   I need an input that sets the name of new enemies
+    -Next to the input I need a summon button
+
+##Java
